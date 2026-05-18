@@ -1,3 +1,4 @@
 {
-  "installCommand": "npm install --legacy-peer-deps"
+  "installCommand": "npm install --legacy-peer-deps && cd packages/Open-AI-Design-Agent/packages/design-agent && npm install && npm run build && cd ../../.. && cd packages/Open-Poe-AI/packages/agents && npm install && npm run build && cd ../../..",
+  "buildCommand": "npm run build"
 }
