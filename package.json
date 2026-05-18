@@ -32,7 +32,8 @@
     "package:linux:deb": "node scripts/package-linux-deb.js",
     "package:linux:deb:arm64": "node scripts/package-linux-deb.js --arch arm64",
     "package:linux:deb:x64": "node scripts/package-linux-deb.js --arch x64",
-    "electron:build:all": "vite build && electron-builder --mac --win --linux"
+    "electron:build:all": "vite build && electron-builder --mac --win --linux",
+    "postinstall": "cd packages/Open-AI-Design-Agent/packages/design-agent && npm install && npm run build && cd ../../.. && cd packages/Open-Poe-AI/packages/agents && npm install && npm run build && cd ../../.."
   },
   "build": {
     "appId": "ai.generative.open",
@@ -127,7 +128,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "autoprefixer": "^10.4.24",
     "electron": "^33.4.11",
-    "electron-builder": "^25.1.8",
+    "electron-builder": "^25.1.6",
     "eslint": "^9",
     "eslint-config-next": "^15.0.0",
     "postcss": "^8.5.6",
